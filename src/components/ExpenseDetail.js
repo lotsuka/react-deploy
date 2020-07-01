@@ -40,7 +40,7 @@ export default function ExpenseDetail(props) {
 
     let expenseName = ExpenseId
 
-    const result = expenseInfo.filter(expenseRow => expenseRow.url == expenseName);
+    const result = expenseInfo.filter(expenseRow => expenseRow.name == expenseName);
 
     if (result.length > 0) {
         return (
@@ -62,8 +62,6 @@ export default function ExpenseDetail(props) {
                     <Typography variant="h6">Você pode pedir reembolso dessa despesa</Typography>
 
                 </Paper>
-
-                
 
                 <Typography variant="body">
                     {result[0].description}

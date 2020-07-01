@@ -23,8 +23,6 @@ const Home = () => {
 
                     <AutocompleteHighlight></AutocompleteHighlight>
 
-                    
-
                     <FolderList></FolderList>
                 </Grid>
             </Grid>

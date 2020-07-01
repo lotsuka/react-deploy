@@ -3,7 +3,7 @@ const iptuTaxDescription = 'Imposto - IPTU  - Quando algum imposto ainda não fo
 export const expenses = [
     {
         name: "Fundo - Reserva",
-        url: "Fundo-Reserva",
+        url: "FundoReserva",
         expenseGroup: "Fundos",
         description: "Descrição do fundo de reserva",
         searchable: "Fundo - Reserva, Fundo de Reserva, Fundo Reserva"
@@ -13,21 +13,22 @@ export const expenses = [
         description: `Acordo-Débito é um valor, negociado em assembléia, utilizado para quitar débito anterior do
         condomínio.`,
         expenseGroup: "Acordos",
-        searchable: "Acordos - Débitos"
+        searchable: "Acordos - Débitos, Débito de acordo",
+        url: "acordo-debito",
     },
     {
         name: 'Acordo - Judicial',
         description: `Acordo-Judicial é um valor, negociado em assembléia, utilizado para quitar débito judicial do
         condomínio.`,
-        expenseGroup: "Fundos",
-        searchable: "Fundos"
+        expenseGroup: "Acordos",
+        searchable: "Acordo judicial, acordo - judicial"
     },
     {
         name: 'Acordo - Trabalhista',
         description: `Acordo - Trabalhista é um valor, negociado em assembléia, utilizado para quitar débito
         trabalhista do condomínio.`,
         expenseGroup: "Acordos",
-        searchable: "Acordos - Débitos"
+        searchable: "Acordos - trabalhista, acordos trabalhistas, acordo trabalhista, acordo - trabalhista"
     },
     {
         name: 'Despesas - Extras',
@@ -341,6 +342,8 @@ export const expenses = [
         name: 'Deficit Orçamentário - Resp. Proprietário',
         description: `Deficit Orçamentário é um valor cobrado do proprietário quando o condomínio está sem
       dinheiro e precisou criar uma cobrança para sanar os gastos extraordinários e equilibrar as contas.`,
+        expenseGroup: "Outros",
+        searchable: "Bonificação "
     },
     {
         name: 'Uso - Churrasqueira',
@@ -359,8 +362,8 @@ export const expenses = [
         description: `Uso - Serviço Condomínio é a cobrança gerada pelo uso individual dos serviços do
       condomínio (como salão de festas e lavanderia) e pela aquisição de itens de acesso (controle, cartão).
       Também pode ser referente à multa por infração das regras do condomínio.`,
-      expenseGroup: "Outros",
-      searchable: "Bonificação "
-  }
+        expenseGroup: "Outros",
+        searchable: "Bonificação "
+    }
 
 ];

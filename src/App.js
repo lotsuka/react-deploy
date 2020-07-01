@@ -25,8 +25,7 @@ function App() {
         <Route exact path="/" component={Home} />
         <Route exact path="/acordos" component={Acordos} />
         <Route exact path="/fundos" component={Fundos} />
-        <Route exact path="/react-deploy?others" component={Others} />
-        <Route exact path="/react-deploy/autocomplete" render={(props) => <AutocompleteNoOptions {...props} />} />
+        <Route exact path="/outros" component={Others} />
         <Route exact path="/:ExpenseId" render={(props) => <ExpenseDetail {...props} />} />
         
       </Switch>
