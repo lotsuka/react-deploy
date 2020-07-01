@@ -1,29 +1,32 @@
 /* eslint-disable no-use-before-define */
-import React from "react";
+import React, { useState } from 'react';
 import TextField from "@material-ui/core/TextField";
 import Autocomplete, {
   createFilterOptions
 } from "@material-ui/lab/Autocomplete";
 import parse from "autosuggest-highlight/parse";
 import match from "autosuggest-highlight/match";
+import { expenses } from '../ExpensesData'
 
 const filter = createFilterOptions();
 
-
-
 export default function AutocompleteHighlight() {
+  const expenseData = expenses;
+  const [expenseInfo, setExpenseInfo] = useState(expenseData);
+
+
   return (
     <Autocomplete
       id="highlights-demo"
-      style={{ width: 300 }}
-      options={top100Films}
-      getOptionLabel={option => option.title}
+      style={{ width: '100%' }}
+      options={expenseInfo}
+      getOptionLabel={option => option.name}
       renderInput={params => (
         <TextField {...params} variant="outlined" margin="normal" />
       )}
       renderOption={(option, { inputValue }) => {
-        const matches = match(option.title, inputValue);
-        const parts = parse(option.title, matches);
+        const matches = match(option.name, inputValue);
+        const parts = parse(option.name, matches);
 
         return (
           <div>
@@ -48,7 +51,7 @@ export default function AutocompleteHighlight() {
         if (params.inputValue !== "" && filtered.length == 0) {
           filtered.push({
             inputValue: params.inputValue,
-            title: `Não achei na lista`
+            name: `Não achei na lista`
           });
         }
 

@@ -21,7 +21,6 @@ const Home = () => {
                 <Grid item md={6} sm={12} style={style}>
                     <Typography variant="h6">Veja se pode pedir reembolso de uma despesa</Typography>
 
-                    <Autocomplete></Autocomplete>
                     <AutocompleteHighlight></AutocompleteHighlight>
 
                     

@@ -23,11 +23,11 @@ function App() {
     <>
       <Switch>
         <Route exact path="/" component={Home} />
-        <Route exact path="/Acordos" component={Acordos} />
+        <Route exact path="/acordos" component={Acordos} />
         <Route exact path="/fundos" component={Fundos} />
         <Route exact path="/react-deploy?others" component={Others} />
         <Route exact path="/react-deploy/autocomplete" render={(props) => <AutocompleteNoOptions {...props} />} />
-        <Route exact path="/react-deploy/:ExpenseId" render={(props) => <ExpenseDetail {...props} />} />
+        <Route exact path="/:ExpenseId" render={(props) => <ExpenseDetail {...props} />} />
         
       </Switch>
     </>
