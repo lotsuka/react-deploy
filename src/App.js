@@ -22,7 +22,7 @@ function App() {
   return (
     <>
       <Switch>
-        <Route exact path="/react-deploy" component={Home} />
+        <Route exact path="https://lotsuka.com/react-deploy/" component={Home} />
         <Route exact path="/react-deploy/acordos" component={Acordos} />
         <Route exact path="/Fundos" component={Fundos} />
         <Route exact path="/Others" component={Others} />
