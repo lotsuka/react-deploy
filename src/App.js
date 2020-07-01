@@ -22,12 +22,12 @@ function App() {
   return (
     <>
       <Switch>
-        <Route exact path="/flow/" component={Home} />
-        <Route exact path="/flow/Acordos" component={Acordos} />
-        <Route exact path="/flow/Fundos" component={Fundos} />
-        <Route exact path="/flow/Others" component={Others} />
-        <Route exact path="/flow/Autocomplete" render={(props) => <AutocompleteNoOptions {...props} />} />
-        <Route exact path="/flow/:ExpenseId" render={(props) => <ExpenseDetail {...props} />} />
+        <Route exact path="/react-deploy" component={Home} />
+        <Route exact path="/Acordos" component={Acordos} />
+        <Route exact path="/Fundos" component={Fundos} />
+        <Route exact path="/Others" component={Others} />
+        <Route exact path="/Autocomplete" render={(props) => <AutocompleteNoOptions {...props} />} />
+        <Route exact path="/:ExpenseId" render={(props) => <ExpenseDetail {...props} />} />
         
       </Switch>
     </>
