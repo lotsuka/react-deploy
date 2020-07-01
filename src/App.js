@@ -8,7 +8,7 @@ import Autocomplete from './components/Autocomplete'
 import Grid from '@material-ui/core/Grid'
 import Box from '@material-ui/core/Box';
 import ExpenseDetail from './components/ExpenseDetail'
-import { Route, Switch } from 'react-router-dom'
+import { Route, Switch, Link } from 'react-router-dom'
 import Home from './components/Home'
 import Acordos from './components/Acordos'
 import Fundos from './components/Fundos'
@@ -22,10 +22,10 @@ function App() {
   return (
     <>
       <Switch>
-        <Route exact path="/react-deploy/" component={Home} />
-        <Route exact path="/react-deploy/acordos" component={Acordos} />
-        <Route exact path="/react-deploy/fundos" component={Fundos} />
-        <Route exact path="/react-deploy/others" component={Others} />
+        <Route exact path="/" component={Home} />
+        <Route exact path="/Acordos" component={Acordos} />
+        <Route exact path="/fundos" component={Fundos} />
+        <Route exact path="/react-deploy?others" component={Others} />
         <Route exact path="/react-deploy/autocomplete" render={(props) => <AutocompleteNoOptions {...props} />} />
         <Route exact path="/react-deploy/:ExpenseId" render={(props) => <ExpenseDetail {...props} />} />
         
