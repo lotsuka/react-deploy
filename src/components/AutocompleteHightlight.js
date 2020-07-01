@@ -4,13 +4,14 @@ import TextField from "@material-ui/core/TextField";
 import Autocomplete, {
   createFilterOptions
 } from "@material-ui/lab/Autocomplete";
-
-const filter = createFilterOptions();
-
 import parse from "autosuggest-highlight/parse";
 import match from "autosuggest-highlight/match";
 
-export default function Highlights() {
+const filter = createFilterOptions();
+
+
+
+export default function AutocompleteHighlight() {
   return (
     <Autocomplete
       id="highlights-demo"

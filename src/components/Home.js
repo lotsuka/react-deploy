@@ -2,7 +2,7 @@ import React from 'react';
 import NavBar from './NavBar'
 import FolderList from './List'
 import Autocomplete from './Autocomplete'
-import AutocompleteNoOptions from './AutcompleteNoOptions'
+import AutocompleteHighlight from './AutocompleteHightlight'
 import Grid from '@material-ui/core/Grid'
 import { Typography, makeStyles } from '@material-ui/core';
 
@@ -22,6 +22,7 @@ const Home = () => {
                     <Typography variant="h6">Veja se pode pedir reembolso de uma despesa</Typography>
 
                     <Autocomplete></Autocomplete>
+                    <AutocompleteHighlight></AutocompleteHighlight>
 
                     
 
