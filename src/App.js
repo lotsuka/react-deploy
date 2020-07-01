@@ -23,7 +23,7 @@ function App() {
     <>
       <Switch>
         <Route exact path="/react-deploy" component={Home} />
-        <Route exact path="/Acordos" component={Acordos} />
+        <Route exact path="/react-deploy/acordos" component={Acordos} />
         <Route exact path="/Fundos" component={Fundos} />
         <Route exact path="/Others" component={Others} />
         <Route exact path="/Autocomplete" render={(props) => <AutocompleteNoOptions {...props} />} />
