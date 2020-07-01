@@ -22,12 +22,12 @@ function App() {
   return (
     <>
       <Switch>
-        <Route exact path="https://lotsuka.com/react-deploy/" component={Home} />
+        <Route exact path="/react-deploy/" component={Home} />
         <Route exact path="/react-deploy/acordos" component={Acordos} />
-        <Route exact path="/Fundos" component={Fundos} />
+        <Route exact path="/react-deploy/fundos" component={Fundos} />
         <Route exact path="/Others" component={Others} />
         <Route exact path="/Autocomplete" render={(props) => <AutocompleteNoOptions {...props} />} />
-        <Route exact path="/:ExpenseId" render={(props) => <ExpenseDetail {...props} />} />
+        <Route exact path="/react-deploy/:ExpenseId" render={(props) => <ExpenseDetail {...props} />} />
         
       </Switch>
     </>

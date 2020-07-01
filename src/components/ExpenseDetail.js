@@ -9,6 +9,14 @@ import IconButton from '@material-ui/core/IconButton';
 import { expenses } from '../ExpensesData'
 import { Route, BrowserHistory, Switch } from 'react-router-dom'
 
+import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemText from '@material-ui/core/ListItemText';
+import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
+import ChevronRight from '@material-ui/icons/ChevronRight';
+import { Link } from 'react-router-dom';
+import Divider from '@material-ui/core/Divider';
+
 
 
 import { Typography, Button } from '@material-ui/core';
@@ -54,6 +62,9 @@ export default function ExpenseDetail(props) {
                     <Typography variant="h6">Você pode pedir reembolso dessa despesa</Typography>
 
                 </Paper>
+
+                
+
                 <Typography variant="body">
                     {result[0].description}
                 </Typography>
@@ -69,6 +80,18 @@ export default function ExpenseDetail(props) {
                 <Typography variant="h4">{expenseName}</Typography>
                 <Paper variant="outlined">
                     <Typography variant="h6">Despesa não existente</Typography>
+
+                    <List>
+                    <ListItem button component={Link} to="/react-deploy/fundos/">
+                        <ListItemText primary="Fundos" secondary="Fundos para eventual inadimplência, obras no condomínio ou cobrir despesas não previstas. " />
+                        <ListItemSecondaryAction>
+                            <IconButton edge="end" aria-label="comments">
+                                <ChevronRight />
+                            </IconButton>
+                        </ListItemSecondaryAction>
+
+                    </ListItem>
+                </List>
 
                 </Paper>
             </>
