@@ -202,47 +202,47 @@ export const expenses = [
         name: 'Individualização - Água',
         description: `Individualização - Água é um valor destinado ao pagamento de serviços de individualização
   das instalações de água do condomínio.`,
-        expenseGroup: "Reformas, individualizações e rateios",
+        expenseGroup: "Reformas",
         searchable: "Individualização "
     },
     {
         name: 'Individualização - Energia',
         description: `Individualização - Energia é um valor destinado ao pagamento de serviços de individualização
   dos medidores de energia do condomínio.`,
-        expenseGroup: "Reformas, individualizações e rateios",
+        expenseGroup: "Reformas",
         searchable: "Individualização "
     },
     {
         name: 'Individualização - Gás',
         description: `Individualização - Gás é um valor destinado ao pagamento de serviços de individualização
   das instalações de gás do condomínio.`,
-        expenseGroup: "Reformas, individualizações e rateios",
+        expenseGroup: "Reformas",
         searchable: "Individualização "
     },
     {
         name: 'Instalação - Medidores',
         description: 'Instalação - Medidores é um valor destinado à instalação do sistema de medidores do condomínio.',
-        expenseGroup: "Reformas, individualizações e rateios",
+        expenseGroup: "Reformas",
         searchable: "Individualização "
     },
     {
         name: 'Instalação - Sistema de Segurança',
         description: `Instalação - Sistema de Segurança é um valor destinado à instalação do sistema de segurança
   no condomínio.`,
-        expenseGroup: "Reformas, individualizações e rateios",
+        expenseGroup: "Reformas",
         searchable: "Individualização "
     },
     {
         name: 'Investimentos iniciais',
         description: `Valor destinado ao pagamento de algum serviço ou obra necessário para o bom funcionamento
   do condomínio. Também pode se referir a melhorias para a estrutura do edifício`,
-        expenseGroup: "Reformas, individualizações e rateios",
+        expenseGroup: "Reformas",
         searchable: "Individualização "
     },
     {
         name: 'Pintura',
         description: 'Pintura é um valor destinado ao pagamento de serviços de pintura  no condomínio.',
-        expenseGroup: "Reformas, individualizações e rateios",
+        expenseGroup: "Reformas",
         searchable: "Individualização "
     },
     {
@@ -250,7 +250,7 @@ export const expenses = [
         description: `Rateio - Aquisição / Instalação de Equipamentos é um valor destinado ao pagamento de algum
   serviço ou obra necessário para o bom funcionamento do condomínio. Também pode se referir a melhorias
   para a estrutura do edifício`,
-        expenseGroup: "Reformas, individualizações e rateios",
+        expenseGroup: "Reformas",
         searchable: "Individualização "
     },
     {
@@ -258,14 +258,14 @@ export const expenses = [
         description: `Rateio - Extra - Serviço/Obra é um valor destinado ao pagamento de algum serviço ou obra
   necessário para o bom funcionamento do condomínio. Também pode se referir a melhorias para a estrutura
   do edifício.`,
-        expenseGroup: "Reformas, individualizações e rateios",
+        expenseGroup: "Reformas",
         searchable: "Individualização "
     },
     {
         name: 'Rateio - Obras',
         description: `Rateio - Obras é um valor destinado ao pagamento de algum serviço ou obra necessário para
   o bom funcionamento do condomínio. Também pode se referir a melhorias para a estrutura do edifício`,
-        expenseGroup: "Reformas, individualizações e rateios",
+        expenseGroup: "Reformas",
         searchable: "Individualização "
     },
     {
@@ -273,52 +273,52 @@ export const expenses = [
         description: `Rateio Obras - Complementar é um valor destinado ao pagamento de algum serviço ou obra
   necessário para o bom funcionamento do condomínio. Também pode se referir a melhorias para a estrutura
   do edifício.`,
-        expenseGroup: "Reformas, individualizações e rateios",
+        expenseGroup: "Reformas",
         searchable: "Individualização "
     },
     {
         name: 'Reforma - Elevador',
         description: 'Reforma - Elevador é um valor destinado ao pagamento de serviços de reparo/troca do elevador',
-        expenseGroup: "Reformas, individualizações e rateios",
+        expenseGroup: "Reformas",
         searchable: "Individualização "
     },
     {
         name: 'Reforma - Fachada',
         description: 'Reforma - Fachada é um valor destinado ao pagamento da reforma da fachada do condomínio.',
-        expenseGroup: "Reformas, individualizações e rateios",
+        expenseGroup: "Reformas",
         searchable: "Individualização "
     },
     {
         name: 'Reforma - Impermeabilização',
         description: `Reforma - Impermeabilização é um valor destinado ao pagamento de serviços de
   impermebilização no condomínio.`,
-        expenseGroup: "Reformas, individualizações e rateios",
+        expenseGroup: "Reformas",
         searchable: "Individualização "
     },
     {
         name: 'Reforma - Tubulação',
         description: 'Reforma - Tubulação é um valor destinado ao pagamento de serviços de reparo/troca de tubulações.',
-        expenseGroup: "Reformas, individualizações e rateios",
+        expenseGroup: "Reformas",
         searchable: "Individualização "
     },
     {
         name: 'Reparo - Elétrico',
         description: `Reparo - Elétrico é um valor destinado ao pagamento de reparos na instalação elétrica do
   condomínio.`,
-        expenseGroup: "Reformas, individualizações e rateios",
+        expenseGroup: "Reformas",
         searchable: "Individualização "
     },
     {
         name: 'Reparo - Hidráulico',
         description: 'Reparo - Hidráulico é um valor destinado ao pagamento de reparos hidráulicos no condomínio.',
-        expenseGroup: "Reformas, individualizações e rateios",
+        expenseGroup: "Reformas",
         searchable: "Individualização "
     },
     {
         name: 'Sistema Monitoramento/Segurança',
         description: `Sistema Monitoramento/Segurança é um valor destinado ao pagamento do sistema de monitoramento
   do condomínio`,
-        expenseGroup: "Reformas, individualizações e rateios",
+        expenseGroup: "Reformas",
         searchable: "Individualização "
     },
 

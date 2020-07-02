@@ -7,14 +7,28 @@ import './index.css';
 import App from './App';
 
 import * as serviceWorker from './serviceWorker';
+import { ThemeProvider, createMuiTheme } from '@material-ui/core';
 
 const history = createBrowserHistory();
+const theme = createMuiTheme({
+  palette: {
+    primary: {
+      light: '#E9E9FD',
+      main: '#5063F0',
+      dark: '#1F3BDF',
+    }
+
+  }
+
+})
 
 ReactDOM.render(
   <>
-  <HashRouter basename="/" history={history}>
-    <App />
-  </HashRouter>
+    <ThemeProvider theme={theme}>
+      <HashRouter basename="/" history={history}>
+        <App />
+      </HashRouter>
+    </ThemeProvider>
   </>,
   document.getElementById('root')
 );

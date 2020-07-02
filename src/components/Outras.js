@@ -18,6 +18,7 @@ import AppBar from '@material-ui/core/AppBar'
 import ToolBar from '@material-ui/core/ToolBar'
 import Typography from '@material-ui/core/Typography'
 import ArrowBack from '@material-ui/icons/ArrowBack';
+import Ordinarias from './Ordinarias';
 
 
 
@@ -67,15 +68,13 @@ const useStyles = makeStyles((theme) => ({
 
 
 
-export default function Fundos(props) {
+export default function Outras(props) {
     const classes = useStyles();
     const { history } = props;
     const expenseData = expenses;
     const [expenseInfo, setExpenseInfo] = useState(expenseData)
 
     function showExpense(expense) {
-        console.dir(expense.name);
-
 
         return (
             <>
@@ -105,17 +104,17 @@ export default function Fundos(props) {
 
 
                             <Typography variant="h5" color="inherit">
-                                Fundos
+                            Outras despesas
                             </Typography>
                         </ToolBar>
                     </AppBar>
                 </Grid>
                 <Grid item md={6} sm={12} className={classes.grid}>
                     <Typography variant="h5" color="inherit" className={classes.title}>
-                        Fundos
+                    Outras despesas
                     </Typography>
                     <Typography variant="body1" color="inherit" className={classes.body1}>
-                        Fundos para eventual inadimplência, obras no condomínio ou cobrir despesas não previstas.
+                    Despesas diversas, como deficit orcamentário, bonificação de fim de ano e usos de serviços do consomínio.
                     </Typography>
                     <Box mt="2rem" />
                     <Typography variant="h5" color="inherit" spacing="4" className={classes.subheadingMedium}>
@@ -125,11 +124,15 @@ export default function Fundos(props) {
 
 
                     <List className={classes.root}>
-                        {expenseInfo.map(expenseNumber => expenseNumber.expenseGroup == "Fundos" ? showExpense(expenseNumber) : undefined)}
+                        {expenseInfo.map(expenseNumber => expenseNumber.expenseGroup == "Outros" ? showExpense(expenseNumber) : undefined)}
                     </List>
 
                     <Button fullWidth variant="outlined" size="large" color="primary" className={classes.buttonSecondary} onClick={() => history.push("/")}>Voltar à lista de reembolsos</Button>
 
+
+                    <Divider></Divider>
+
+                    <Ordinarias></Ordinarias>
                 </Grid>
             </Grid>
         </>

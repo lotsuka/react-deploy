@@ -67,15 +67,13 @@ const useStyles = makeStyles((theme) => ({
 
 
 
-export default function Fundos(props) {
+export default function Reformas(props) {
     const classes = useStyles();
     const { history } = props;
     const expenseData = expenses;
     const [expenseInfo, setExpenseInfo] = useState(expenseData)
 
     function showExpense(expense) {
-        console.dir(expense.name);
-
 
         return (
             <>
@@ -105,17 +103,17 @@ export default function Fundos(props) {
 
 
                             <Typography variant="h5" color="inherit">
-                                Fundos
+                            Reformas, individualizações e rateios
                             </Typography>
                         </ToolBar>
                     </AppBar>
                 </Grid>
                 <Grid item md={6} sm={12} className={classes.grid}>
                     <Typography variant="h5" color="inherit" className={classes.title}>
-                        Fundos
+                    Reformas, individualizações e rateios
                     </Typography>
                     <Typography variant="body1" color="inherit" className={classes.body1}>
-                        Fundos para eventual inadimplência, obras no condomínio ou cobrir despesas não previstas.
+                    Valores destinados ao pagamento de serviços ou obras para o funcionamento do condomínio
                     </Typography>
                     <Box mt="2rem" />
                     <Typography variant="h5" color="inherit" spacing="4" className={classes.subheadingMedium}>
@@ -125,7 +123,7 @@ export default function Fundos(props) {
 
 
                     <List className={classes.root}>
-                        {expenseInfo.map(expenseNumber => expenseNumber.expenseGroup == "Fundos" ? showExpense(expenseNumber) : undefined)}
+                        {expenseInfo.map(expenseNumber => expenseNumber.expenseGroup == "Reformas" ? showExpense(expenseNumber) : undefined)}
                     </List>
 
                     <Button fullWidth variant="outlined" size="large" color="primary" className={classes.buttonSecondary} onClick={() => history.push("/")}>Voltar à lista de reembolsos</Button>

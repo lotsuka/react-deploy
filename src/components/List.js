@@ -43,7 +43,7 @@ export default function FolderList() {
             </ListItem>
             <Divider />
 
-            <ListItem button component={Link} to="/ExpenseGroup">
+            <ListItem button component={Link} to="/Reformas">
                 <ListItemText primary="Reformas, individualizações e rateios" secondary="Valores destinados ao pagamento de serviços ou obras para o funcionamento do condomínio" />
                 <ListItemSecondaryAction>
                     <IconButton edge="end" aria-label="comments">
@@ -53,7 +53,7 @@ export default function FolderList() {
             </ListItem>
 
             <Divider />
-            <ListItem button component={Link} to="/Others/">
+            <ListItem button component={Link} to="/Outras/">
                 <ListItemText primary="Outras despesas" secondary="Despesas diversas, como deficit orcamentário, bonificação de fim de ano e usos de serviços do consomínio." />
                 <ListItemSecondaryAction>
                     <IconButton edge="end" aria-label="comments">
