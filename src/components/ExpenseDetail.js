@@ -5,10 +5,16 @@ import NavBar from './NavBar'
 import AppBar from '@material-ui/core/AppBar'
 import ToolBar from '@material-ui/core/ToolBar'
 import ArrowBack from '@material-ui/icons/ArrowBack';
+import CheckIcon from '@material-ui/icons/Check';
 import IconButton from '@material-ui/core/IconButton';
+import Icon from '@material-ui/core/Icon';
 import { expenses } from '../ExpensesData'
 import { Route, BrowserHistory, Switch } from 'react-router-dom'
-import Grid from '@material-ui/core/Grid'
+import Grid from '@material-ui/core/Grid';
+import Box from '@material-ui/core/Box';
+import MoneyOffIcon from '@material-ui/icons/MoneyOff';
+
+import Ordinarias from './Ordinarias';
 
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
@@ -44,7 +50,7 @@ const useStyles = makeStyles((theme) => ({
     },
     body1: {
         fontSize: '14px',
-        lineHeight: '20px',
+        lineHeight: '24px',
         color: '#757575',
     },
     subheadingMedium: {
@@ -62,8 +68,28 @@ const useStyles = makeStyles((theme) => ({
         borderRadius: '8px',
         margin: '24px 0',
         boxShadow: 'none'
-    }
+    },
+    alertSuccess: {
+        border: '1px solid #007844',
+        color: '#007844',
+        fontWeight: '500',
+        fontSize: '14px',
+        lineHeight: '24px',
+        margin: '1rem 0',
 
+    },
+    alertAttention: {
+        border: '1px solid #FDB637',
+        color: '#424242',
+        fontWeight: '500',
+        fontSize: '14px',
+        lineHeight: '24px',
+        margin: '1rem 0',
+
+    },
+    alertIcon: {
+        margin: '0 1rem'
+    }
 }));
 
 
@@ -79,7 +105,7 @@ export default function ExpenseDetail(props) {
 
     let expenseName = ExpenseId
 
-    const result = expenseInfo.filter(expenseRow => expenseRow.name == expenseName);
+    const result = expenseInfo.filter(expenseRow => expenseRow.url == expenseName);
 
     if (result.length > 0) {
         return (
@@ -94,23 +120,35 @@ export default function ExpenseDetail(props) {
 
 
                                 <Typography variant="h5" color="inherit">
-                                {expenseName}
-                            </Typography>
+                                    {result[0].name}
+                                </Typography>
                             </ToolBar>
                         </AppBar>
                     </Grid>
                     <Grid item md={6} sm={12} className={classes.grid}>
 
-                        <Typography variant="h5" className={classes.title}>{expenseName}</Typography>
-                        <Paper variant="outlined">
-                            <Typography variant="h6">Você pode pedir reembolso dessa despesa</Typography>
+                        <Typography variant="h5" className={classes.title}>{result[0].name}</Typography>
+
+                        <Paper variant="outlined" className={classes.alertSuccess}>
+                            <ToolBar>
+                                <Icon edge="start" className={classes.alertIcon} color="inherit" aria-label="menu">
+                                    <CheckIcon />
+                                </Icon>
+
+
+                                <Typography variant="body1">Você pode pedir reembolso dessa despesa</Typography>
+                            </ToolBar>
+
+                            
                         </Paper>
 
-                        <Typography variant="body"  className={classes.body1}>
+                        <Typography variant="body" className={classes.body1, classes.grayHigh}>
                             {result[0].description}
                         </Typography>
+
                         <br />
-                        <Button fullWidth size="large" variant="contained" className={classes.buttonPrimary} color="primary">Pedir reembolso dessa despesa</Button>
+
+                        <Button fullWidth size="large" href="https://www.figma.com/proto/vikIUDW9zdt0o0ffR3civo/Estudos-Self-Condo-Reembolso-e-Meu-Aluguel?node-id=1848%3A47659&viewport=-3728%2C-2202%2C0.3785596787929535&scaling=scale-down" variant="contained" className={classes.buttonPrimary} color="primary">Pedir reembolso dessa despesa</Button>
                     </Grid>
                 </Grid>
             </>
@@ -119,24 +157,38 @@ export default function ExpenseDetail(props) {
     else {
         return (
             <>
-                <NavBar> </NavBar>
-                <Typography variant="h4">{expenseName}</Typography>
-                <Paper variant="outlined">
-                    <Typography variant="h6">Despesa não existente</Typography>
-
-                    <List>
-                        <ListItem button component={Link} to="/react-deploy/fundos/">
-                            <ListItemText primary="Fundos" secondary="Fundos para eventual inadimplência, obras no condomínio ou cobrir despesas não previstas. " />
-                            <ListItemSecondaryAction>
-                                <IconButton edge="end" aria-label="comments">
-                                    <ChevronRight />
+                <Grid container justify="center">
+                    <Grid item xs={12}>
+                        <AppBar position="static" className={classes.appBarStyle}>
+                            <ToolBar>
+                                <IconButton button edge="start" className="Back" color="inherit" aria-label="menu" onClick={() => history.push("/")}>
+                                    <ArrowBack />
                                 </IconButton>
-                            </ListItemSecondaryAction>
 
-                        </ListItem>
-                    </List>
 
-                </Paper>
+                                <Typography variant="h5" color="inherit">
+                                    Não achei a despesa na lista
+                                </Typography>
+                            </ToolBar>
+                        </AppBar>
+                    </Grid>
+                    <Grid item md={6} sm={12} className={classes.grid}>
+
+                        
+                        <Typography variant="body1" className={classes.body1, classes.grayHigh}>Confira se a despesa não é de responsabilidade de inquilino e por isso não tem direito a reembolso:</Typography>
+
+                        <Box mt="1rem" />
+
+                        
+
+                        <Ordinarias></Ordinarias>
+                        <br />
+
+                        
+
+                        
+                    </Grid>
+                </Grid>
             </>
         );
     }

@@ -26,7 +26,7 @@ export default function FolderList() {
 
                 <ListItemText primary="Acordos, Impostos e Tarifas" secondary="Acordos referente a algum débito anterior do condomínio, impostos ou tarifas." />
                 <ListItemSecondaryAction>
-                    <IconButton edge="end" aria-label="comments">
+                    <IconButton edge="end" aria-label="comments" button component={Link} to="/Acordos/">
                         <ChevronRight />
                     </IconButton>
                 </ListItemSecondaryAction>
@@ -35,7 +35,7 @@ export default function FolderList() {
             <ListItem button component={Link} to="/Fundos/">
                 <ListItemText primary="Fundos" secondary="Fundos para eventual inadimplência, obras no condomínio ou cobrir despesas não previstas. " />
                 <ListItemSecondaryAction>
-                    <IconButton edge="end" aria-label="comments">
+                    <IconButton edge="end" aria-label="comments" button component={Link} to="/Fundos/">
                         <ChevronRight />
                     </IconButton>
                 </ListItemSecondaryAction>
@@ -46,7 +46,7 @@ export default function FolderList() {
             <ListItem button component={Link} to="/Reformas">
                 <ListItemText primary="Reformas, individualizações e rateios" secondary="Valores destinados ao pagamento de serviços ou obras para o funcionamento do condomínio" />
                 <ListItemSecondaryAction>
-                    <IconButton edge="end" aria-label="comments">
+                    <IconButton edge="end" aria-label="comments" button component={Link} to="/Reformas">
                         <ChevronRight />
                     </IconButton>
                 </ListItemSecondaryAction>
@@ -56,7 +56,7 @@ export default function FolderList() {
             <ListItem button component={Link} to="/Outras/">
                 <ListItemText primary="Outras despesas" secondary="Despesas diversas, como deficit orcamentário, bonificação de fim de ano e usos de serviços do consomínio." />
                 <ListItemSecondaryAction>
-                    <IconButton edge="end" aria-label="comments">
+                    <IconButton edge="end" aria-label="comments" button component={Link} to="/Outras/">
                         <ChevronRight />
                     </IconButton>
                 </ListItemSecondaryAction>
