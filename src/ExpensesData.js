@@ -37,7 +37,7 @@ export const expenses = [
         description: `Despesas - Extras é um valor destinado ao pagamento de algum serviço ou obra necessário para
         o bom funcionamento do condomínio. Também pode se referir a melhorias para a estrutura do edifício`,
         expenseGroup: "Acordos",
-        searchable: "Despesas extras, despesas - extras, despesa extra, despesas - extras",
+        searchable: "Despesas extras, despesas - extras, despesa extra, despesas - extras, chamada extra, chamada - extra pcci, chamada pcci, chamada extra pcci",
         url: "despesasextras",
     },
     {
@@ -192,8 +192,7 @@ export const expenses = [
 
     {
         name: 'Fundo - Provisões',
-        description: `Fundo - Provisões é uma cobrança destinada a cobrir despesas não previstas que venham a
-  surgir no condomínio.`,
+        description: `Fundo - Provisões é uma cobrança destinada a cobrir despesas não previstas que venham a surgir no condomínio.`,
         expenseGroup: "Fundos",
         searchable: "Fundos"
     },

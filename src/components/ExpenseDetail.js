@@ -9,6 +9,7 @@ import CheckIcon from '@material-ui/icons/Check';
 import IconButton from '@material-ui/core/IconButton';
 import Icon from '@material-ui/core/Icon';
 import { expenses } from '../ExpensesData'
+import { expensesAll } from '../AllExpensesData'
 import { Route, BrowserHistory, Switch } from 'react-router-dom'
 import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
@@ -100,7 +101,7 @@ export default function ExpenseDetail(props) {
 
     const classes = useStyles();
     const { history } = props;
-    const expenseData = expenses;
+    const expenseData = expensesAll;
     const [expenseInfo, setExpenseInfo] = useState(expenseData)
 
     let expenseName = ExpenseId
@@ -128,7 +129,7 @@ export default function ExpenseDetail(props) {
 
                         <Typography variant="h5" className={classes.title}>{result[0].name}</Typography>
 
-                        {(result[0].expenseGroup == "Ordinárias") ? (
+                        {(result[0].expenseGroup == "Ordinarias") ? (
                             <Paper variant="outlined" className={classes.alertAttention}>
                                 <ToolBar>
                                     <Icon edge="start" className={classes.alertIcon} color="inherit" aria-label="menu">
@@ -136,7 +137,7 @@ export default function ExpenseDetail(props) {
                                     </Icon>
 
 
-                                    <Typography variant="body1">Você não tem direito a pedir reembolso das despesas de inquilinos</Typography>
+                                    <Typography variant="body1">Você não tem direito a pedir reembolso dessa despesa</Typography>
                                 </ToolBar>
                             </Paper>
 
@@ -159,7 +160,12 @@ export default function ExpenseDetail(props) {
 
                         <br />
 
-                        <Button fullWidth size="large" href="https://www.figma.com/proto/vikIUDW9zdt0o0ffR3civo/Estudos-Self-Condo-Reembolso-e-Meu-Aluguel?node-id=1848%3A47659&viewport=-3728%2C-2202%2C0.3785596787929535&scaling=scale-down" variant="contained" className={classes.buttonPrimary} color="primary">Pedir reembolso dessa despesa</Button>
+                        { (result[0].expenseGroup != "Ordinarias") ? (
+                            <Button fullWidth size="large" href="https://www.figma.com/proto/vikIUDW9zdt0o0ffR3civo/Estudos-Self-Condo-Reembolso-e-Meu-Aluguel?node-id=1848%3A47659&viewport=-3728%2C-2202%2C0.3785596787929535&scaling=scale-down" variant="contained" className={classes.buttonPrimary} color="primary">Pedir reembolso dessa despesa</Button>
+                        ) : (
+                                null
+                            )
+                        }
                     </Grid>
                 </Grid>
             </>

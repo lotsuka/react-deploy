@@ -74,7 +74,6 @@ const Home = () => {
 
                         <AutocompleteHighlight></AutocompleteHighlight>
                     </Box>
-                    <FolderList></FolderList>
                 </Grid>
             </Grid>
         </div>

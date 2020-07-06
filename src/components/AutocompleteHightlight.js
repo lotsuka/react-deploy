@@ -7,6 +7,7 @@ import Autocomplete, {
 import parse from "autosuggest-highlight/parse";
 import match from "autosuggest-highlight/match";
 import { expenses } from '../ExpensesData'
+import { expensesAll } from '../AllExpensesData'
 import { makeStyles, withTheme } from '@material-ui/core/styles';
 import { Link } from 'react-router-dom'
 import Box from '@material-ui/core/Box'
@@ -36,7 +37,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function AutocompleteHighlight() {
-  const expenseData = expenses.sort((a, b) => (a.name > b.name) ? 1 : -1);;
+  const expenseData = expensesAll.sort((a, b) => (a.name > b.name) ? 1 : -1);;
 
   const [expenseInfo, setExpenseInfo] = useState(expenseData);
 
