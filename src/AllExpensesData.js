@@ -796,7 +796,7 @@ export const expensesAll = [
         "from": "tenant",
         "to": "quinto-andar",
         expenseGroup: "Ordinarias",
-        searchable: "Proteção Residencial - Condomínio",
+        searchable: "Proteção Residencial - Condomínio, Uso - Seguro, Seguros",
         url: "protecao-residencial-condominio"
     }, {
         id: 17592194523922,

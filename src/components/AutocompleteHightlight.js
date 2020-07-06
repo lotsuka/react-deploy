@@ -33,6 +33,9 @@ const useStyles = makeStyles((theme) => ({
     color: '#5063F0',
     width: '100%',
     display: 'block'
+  },
+  textField: {
+    background: 'white'
   }
 }));
 
@@ -51,7 +54,7 @@ export default function AutocompleteHighlight() {
       options={expenseInfo}
       getOptionLabel={option => option.searchable}
       renderInput={params => (
-        <TextField {...params} variant="outlined" margin="normal" />
+        <TextField autoFocus {...params} className={classes.textField} variant="outlined" margin="normal" />
       )}
       renderOption={(option, { inputValue }) => {
         const matches = match(option.name, inputValue);
