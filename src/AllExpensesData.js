@@ -1,3 +1,4 @@
+
 const iptuTaxDescription = 'Imposto - IPTU  - Quando algum imposto ainda não foi desmembrado pela prefeitura';
 
 export const expenses = [
@@ -375,7 +376,7 @@ export const expenses = [
         description: 'Cartão - Controle de acesso é a cobrança gerada pela compra de itens de acesso ao condomínio.',
         expenseGroup: "Outros",
         searchable: "Cartão - Controle de acesso, cartão de controle, chave de acesso ao condomínio, chave de acesso ao prédio, controle de entrada",
-        url: "cartao-controle",
+        url: "deficit-orcamentario-proprietario",
     },
     {
         name: 'Deficit Orçamentário - Resp. Proprietário',
@@ -408,12 +409,13 @@ export const expenses = [
         searchable: "Uso - Serviço Condomínio, serviços de condomínio",
         url: "uso-servico-condominio",
     },
+
     {
         name: '13° salário',
         description: `Encargos trabalhistas`,
         expenseGroup: "Ordinárias",
         searchable: "13° salário, décimo terceiro salário, 13 salário",
-        url: "13-salario",
+        url: "uso-servico-condominio",
     }
 
 ];

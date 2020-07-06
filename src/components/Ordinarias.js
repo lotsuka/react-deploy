@@ -93,7 +93,11 @@ const useStyles = makeStyles((theme) => ({
         display: 'block',
         textDecoration: 'none',
         margin: '16px 0',
-        color: "#5063F0"
+        color: "#5063F0",
+        '&hover': {
+            textDecoration: "underline",
+            color: 'red'
+        }
     }
 }));
 
@@ -119,11 +123,9 @@ export default function Ordinarias(props) {
 
                     <Typography variant="body1">Você não tem direito a pedir reembolso das despesas de inquilinos</Typography>
                 </ToolBar>
-
-
             </Paper>
 
-            <Link className={classes.link} to="https://help.quintoandar.com.br/hc/pt-br/articles/115000619791-Consumos">Consumos do imóvel, como água</Link>
+            <Link className="customLink" to="https://help.quintoandar.com.br/hc/pt-br/articles/115000619791-Consumos">Consumos do imóvel, como água</Link>
             <Link className={classes.link} to="https://help.quintoandar.com.br/hc/pt-br/articles/115000629032-Cotas-condominiais">Cotas condominiais</Link>
             <Link className={classes.link} to="https://help.quintoandar.com.br/hc/pt-br/articles/115000629352-Corre%C3%A7%C3%B5es-na-fatura">Correções na fatura</Link>
             <Link className={classes.link} to="https://help.quintoandar.com.br/hc/pt-br/articles/115000619851-Encargos-e-honor%C3%A1rios">Encargos e honorários, como 13° salário</Link>

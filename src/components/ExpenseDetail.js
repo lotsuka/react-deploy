@@ -118,7 +118,6 @@ export default function ExpenseDetail(props) {
                                     <ArrowBack />
                                 </IconButton>
 
-
                                 <Typography variant="h5" color="inherit">
                                     {result[0].name}
                                 </Typography>
@@ -129,18 +128,30 @@ export default function ExpenseDetail(props) {
 
                         <Typography variant="h5" className={classes.title}>{result[0].name}</Typography>
 
-                        <Paper variant="outlined" className={classes.alertSuccess}>
-                            <ToolBar>
-                                <Icon edge="start" className={classes.alertIcon} color="inherit" aria-label="menu">
-                                    <CheckIcon />
-                                </Icon>
+                        {(result[0].expenseGroup == "Ordinárias") ? (
+                            <Paper variant="outlined" className={classes.alertAttention}>
+                                <ToolBar>
+                                    <Icon edge="start" className={classes.alertIcon} color="inherit" aria-label="menu">
+                                        <MoneyOffIcon />
+                                    </Icon>
 
 
-                                <Typography variant="body1">Você pode pedir reembolso dessa despesa</Typography>
-                            </ToolBar>
+                                    <Typography variant="body1">Você não tem direito a pedir reembolso das despesas de inquilinos</Typography>
+                                </ToolBar>
+                            </Paper>
 
-                            
-                        </Paper>
+                        ) : (
+                                <Paper variant="outlined" className={classes.alertSuccess}>
+                                    <ToolBar>
+                                        <Icon edge="start" className={classes.alertIcon} color="inherit" aria-label="menu">
+                                            <CheckIcon />
+                                        </Icon>
+
+
+                                        <Typography variant="body1">Você pode pedir reembolso dessa despesa</Typography>
+                                    </ToolBar>
+                                </Paper>
+                            )}
 
                         <Typography variant="body" className={classes.body1, classes.grayHigh}>
                             {result[0].description}
@@ -174,19 +185,19 @@ export default function ExpenseDetail(props) {
                     </Grid>
                     <Grid item md={6} sm={12} className={classes.grid}>
 
-                        
+
                         <Typography variant="body1" className={classes.body1, classes.grayHigh}>Confira se a despesa não é de responsabilidade de inquilino e por isso não tem direito a reembolso:</Typography>
 
                         <Box mt="1rem" />
 
-                        
+
 
                         <Ordinarias></Ordinarias>
                         <br />
 
-                        
 
-                        
+
+
                     </Grid>
                 </Grid>
             </>

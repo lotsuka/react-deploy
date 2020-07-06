@@ -7,14 +7,40 @@ import Autocomplete, {
 import parse from "autosuggest-highlight/parse";
 import match from "autosuggest-highlight/match";
 import { expenses } from '../ExpensesData'
+import { makeStyles, withTheme } from '@material-ui/core/styles';
 import { Link } from 'react-router-dom'
+import Box from '@material-ui/core/Box'
 
 const filter = createFilterOptions();
+
+const useStyles = makeStyles((theme) => ({
+  link: {
+    textDecoration: 'none',
+    padding: '8px 0 4px 0',
+    borderBottom: "1px solid #e0e0e0",
+    color: '#424242',
+    width: '100%',
+    display: 'block',
+    '&hover': {
+      color: '#5063F0'
+    }
+  },
+  linkPrimary: {
+    textDecoration: 'none',
+    padding: '16px 0',
+    fontWeight:'700',
+    color: '#5063F0',
+    width: '100%',
+    display: 'block'
+  }
+}));
 
 export default function AutocompleteHighlight() {
   const expenseData = expenses.sort((a, b) => (a.name > b.name) ? 1 : -1);;
 
   const [expenseInfo, setExpenseInfo] = useState(expenseData);
+
+  const classes = useStyles();
 
 
   return (
@@ -31,28 +57,25 @@ export default function AutocompleteHighlight() {
         const parts = parse(option.name, matches);
 
         return (
-          <div>
-            {
+          <Box button component={Link} to={option.url} className={option.url == "/nao-achei" ? classes.linkPrimary : classes.link}>
+            {parts.map((part, index) => (
 
-              parts.map((part, index) => (
-                
-                <Link to={option.url} >
-                  <span
-                    key={index}
-                    style={{ fontWeight: part.highlight ? 700 : 400 }}
-                  >
-                    {part.text}
-                  </span>
-                </Link>
-              ))}
-          </div>
+              <span
+                key={index}
+                style={{ fontWeight: part.highlight ? 700 : 400 }}
+              >
+                {part.text}
+              </span>
+            ))}
+
+          </Box>
         );
       }}
       filterOptions={(options, params) => {
         const filtered = filter(options, params);
 
         // Suggest the creation of a new value
-        if (params.inputValue !== "" && filtered.length == 0) {
+        if (params.inputValue !== "" && filtered.length >= 0) {
           filtered.push({
             inputValue: params.inputValue,
             name: `Não achei na lista`,
