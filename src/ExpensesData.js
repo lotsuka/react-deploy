@@ -407,13 +407,6 @@ export const expenses = [
         expenseGroup: "Outros",
         searchable: "Uso - Serviço Condomínio, serviços de condomínio",
         url: "uso-servico-condominio",
-    },
-    {
-        name: '13° salário',
-        description: `Encargos trabalhistas`,
-        expenseGroup: "Ordinárias",
-        searchable: "13° salário, décimo terceiro salário, 13 salário",
-        url: "13-salario",
     }
 
 ];

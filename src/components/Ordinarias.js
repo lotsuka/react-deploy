@@ -111,7 +111,7 @@ export default function Ordinarias(props) {
         <>
 
             <Typography variant="h4" className={classes.title}> Despesas de pagamento de inquilinos</Typography>
-
+            
             <Box mt="1rem" />
 
             <Paper variant="outlined" className={classes.alertAttention}>
@@ -124,8 +124,10 @@ export default function Ordinarias(props) {
                     <Typography variant="body1">Você não tem direito a pedir reembolso das despesas de inquilinos</Typography>
                 </ToolBar>
             </Paper>
-
-            <Link className="customLink" to="https://help.quintoandar.com.br/hc/pt-br/articles/115000619791-Consumos">Consumos do imóvel, como água</Link>
+            
+            
+            <Typography variant="body1" className={classes.body1}>Chamada de ordinárias, essas depesas são relacionadas a gastos rotineiros para a manutenção do condomínio. Elas podem ser: </Typography>
+            <Link className={classes.link} to="https://help.quintoandar.com.br/hc/pt-br/articles/115000619791-Consumos">Consumos do imóvel, como água</Link>
             <Link className={classes.link} to="https://help.quintoandar.com.br/hc/pt-br/articles/115000629032-Cotas-condominiais">Cotas condominiais</Link>
             <Link className={classes.link} to="https://help.quintoandar.com.br/hc/pt-br/articles/115000629352-Corre%C3%A7%C3%B5es-na-fatura">Correções na fatura</Link>
             <Link className={classes.link} to="https://help.quintoandar.com.br/hc/pt-br/articles/115000619851-Encargos-e-honor%C3%A1rios">Encargos e honorários, como 13° salário</Link>
@@ -135,7 +137,7 @@ export default function Ordinarias(props) {
 
             <Typography variant="h6">Não é uma despesa de inquilino?</Typography>
             
-            <Button variant="contained" fullWidth className={classes.buttonPrimary} size="large" color="primary">Pedir reembolso dessa despesa</Button>
+            <Button variant="contained" fullWidth className={classes.buttonPrimary} size="large" color="primary">Pedir reembolso da despesa</Button>
             <Button fullWidth variant="outlined" className={classes.buttonSecondary} size="large" color="primary" className={classes.buttonSecondary} onClick={() => history.push("/")}>Voltar à lista de reembolsos</Button>
 
         </>
