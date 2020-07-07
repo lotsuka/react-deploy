@@ -5,7 +5,7 @@ export const expensesAll = [
         name: "Fundo - Reserva",
         url: "fundoreserva",
         expenseGroup: "Fundos",
-        description: "Descrição do fundo de reserva",
+        description: "Fundo - Reserva é um fundo destinado a cobrir despesas não previstas que venham a surgir no condomínio.",
         searchable: "Fundo - Reserva, Fundo de Reserva, Fundo Reserva, fdo reserva"
     },
     {
@@ -147,7 +147,7 @@ export const expensesAll = [
         description: `Fundo - Estacionamento - Manutenção é um valor arrecadado para o fundo destinado à
   manutenção e conservação das instalações do estacionamento/ garagem.`,
         expenseGroup: "Fundos",
-        searchable: "Fundos, estacionamento, manutenção do estacionamento",
+        searchable: "Fundos, estacionamento, manutenção do estacionamento, manut.",
         url: "estacionamentomanutencao"
     },
     {
@@ -309,7 +309,7 @@ export const expensesAll = [
         name: 'Reforma - Elevador',
         description: 'Reforma - Elevador é um valor destinado ao pagamento de serviços de reparo/troca do elevador',
         expenseGroup: "Reformas",
-        searchable: "Reforma - Elevador, benfeitoria dos elevadores, reparo de elevadores, conserto do elevador, concerto",
+        searchable: "Reforma - Elevador, benfeitoria dos elevadores, reparo de elevadores, conserto do elevador, concerto, peças elevador",
         url: "reforma-elevador",
     },
     {
@@ -597,7 +597,7 @@ export const expensesAll = [
         "from": "tenant",
         "to": "quinto-andar",
         expenseGroup: "Ordinarias",
-        searchable: "Fundo - Manutenção",
+        searchable: "Fundo - Manutenção, manut., fundos",
         url: "fundo-manutencao"
     }, {
         id: 17592194523874,

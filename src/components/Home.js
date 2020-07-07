@@ -68,8 +68,9 @@ const Home = () => {
                 </Grid>
                 <Grid item md={6} sm={12} style={style}>
                     <Box className={classes.boxBackground}>
-                        <Typography variant="h6">Veja se pode pedir reembolso de uma despesa</Typography>
-                        <Typography variant="body2">Nome da despesa</Typography>
+                        <Typography variant="h6" className={classes.title}>Digite a despesa para conferir se você pode pedir reembolso</Typography>
+                        <Box mt="2rem" />
+                        <Typography variant="body2" className={classes.subheadingMedium}>Nome da despesa</Typography>
                         <Typography variant="caption">Qual nome mais se aproxima do que está escrito no boleto?</Typography>
 
                         <AutocompleteHighlight></AutocompleteHighlight>
