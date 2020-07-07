@@ -597,7 +597,7 @@ export const expensesAll = [
         "from": "tenant",
         "to": "quinto-andar",
         expenseGroup: "Ordinarias",
-        searchable: "Fundo - Manutenção, manut., fundos",
+        searchable: "Fundo - Manutenção, Fdo. Manut., Fdo Manut, Fundos, Fundo de Manutenção",
         url: "fundo-manutencao"
     }, {
         id: 17592194523874,

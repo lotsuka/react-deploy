@@ -5,6 +5,7 @@ import { HashRouter, Router, Route, Link } from "react-router-dom";
 import { createBrowserHistory } from "history";
 import './index.css';
 import App from './App';
+import 'fontsource-roboto';
 
 import * as serviceWorker from './serviceWorker';
 import { ThemeProvider, createMuiTheme } from '@material-ui/core';

@@ -51,8 +51,12 @@ const useStyles = makeStyles((theme) => ({
     },
     body1: {
         fontSize: '14px',
+        lineHeight: '24px'
+    },
+    body2: {
+        fontSize: '14px',
         lineHeight: '24px',
-        color: '#757575',
+        fontWeight: '500',
     },
     subheadingMedium: {
         fontWeight: '600',
@@ -120,7 +124,7 @@ export default function ExpenseDetail(props) {
                                 </IconButton>
 
                                 <Typography variant="h5" color="inherit">
-                                    {result[0].name}
+                                    Informações da despesa
                                 </Typography>
                             </ToolBar>
                         </AppBar>
@@ -137,7 +141,7 @@ export default function ExpenseDetail(props) {
                                     </Icon>
 
 
-                                    <Typography variant="body1">Você não tem direito a pedir reembolso dessa despesa</Typography>
+                                    <Typography variant="body1" className={classes.body2}>Você não tem direito a pedir reembolso dessa despesa</Typography>
                                 </ToolBar>
                             </Paper>
 
@@ -149,12 +153,12 @@ export default function ExpenseDetail(props) {
                                         </Icon>
 
 
-                                        <Typography variant="body1">Você pode pedir reembolso dessa despesa</Typography>
+                                        <Typography variant="body1" className={classes.body2}>Você pode pedir reembolso dessa despesa</Typography>
                                     </ToolBar>
                                 </Paper>
                             )}
 
-                        <Typography variant="body" className={classes.body1, classes.grayHigh}>
+                        <Typography variant="body" className={classes.body1}>
                             {result[0].description}
                         </Typography>
 
