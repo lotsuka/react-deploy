@@ -93,7 +93,7 @@ const useStyles = makeStyles((theme) => ({
 
     },
     alertIcon: {
-        margin: '0 1rem'
+        margin: '0 0.5rem 0 0'
     }
 }));
 

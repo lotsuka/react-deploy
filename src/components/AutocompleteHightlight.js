@@ -10,7 +10,8 @@ import { expenses } from '../ExpensesData'
 import { expensesAll } from '../AllExpensesData'
 import { makeStyles, withTheme } from '@material-ui/core/styles';
 import { Link } from 'react-router-dom'
-import Box from '@material-ui/core/Box'
+import Box from '@material-ui/core/Box';
+import { Typography } from '@material-ui/core';
 
 const filter = createFilterOptions();
 
@@ -36,6 +37,8 @@ const useStyles = makeStyles((theme) => ({
   },
   textField: {
     background: 'white'
+  }, caption: {
+    display: 'block'
   }
 }));
 
@@ -57,12 +60,16 @@ export default function AutocompleteHighlight() {
         <TextField autoFocus {...params} className={classes.textField} variant="outlined" margin="normal" />
       )}
       renderOption={(option, { inputValue }) => {
+
         const matches = match(option.name, inputValue);
         const parts = parse(option.name, matches);
 
         return (
+          <>
           <Box button component={Link} to={option.url} className={option.url == "/nao-achei" ? classes.linkPrimary : classes.link}>
+            
             {parts.map((part, index) => (
+              
 
               <span
                 key={index}
@@ -70,19 +77,28 @@ export default function AutocompleteHighlight() {
               >
                 {part.text}
               </span>
+
+              
+
             ))}
 
+            <Typography variant="caption" className={classes.caption}>{option.searchable}</Typography>
+
           </Box>
+          </>
         );
       }}
       filterOptions={(options, params) => {
+        
+        params.inputValue = params.inputValue.replace(/\./g,'')
         const filtered = filter(options, params);
+        console.dir(params.inputValue)
 
         // Suggest the creation of a new value
         if (params.inputValue !== "" && filtered.length >= 0) {
           filtered.push({
             inputValue: params.inputValue,
-            name: `Não achei na lista`,
+            name: `Pedir reembolso da despesa digitada`,
             url: "/nao-achei"
           });
         }

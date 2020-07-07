@@ -186,7 +186,7 @@ export const expensesAll = [
         name: 'Fundo - Obras',
         description: 'Fundo - Obras é um valor arrecadado para eventuais obras e melhorias no condomínio',
         expenseGroup: "Fundos",
-        searchable: "fundo de obras, fundo - obras, fundo obras, fundo obra, fundo - obra, fundo de obra",
+        searchable: "fundo de obras, fundo - obras, fundo obras, fundo obra, fundo - obra, fundo de obra, rateio fundo de obras",
         url: "obras"
     },
 
@@ -239,7 +239,7 @@ export const expensesAll = [
         description: `Individualização - Gás é um valor destinado ao pagamento de serviços de individualização
   das instalações de gás do condomínio.`,
         expenseGroup: "Reformas",
-        searchable: "Individualização - Gás, Indiv. Gás, Indiv. - Gás, Individualização do gás",
+        searchable: "Individualização - Gás, Indiv. Gás, Indiv. - Gás, Individualização do gás, Rateio indiv. Gás",
         url: "individualizacao-gas",
     },
     {
@@ -840,7 +840,7 @@ export const expensesAll = [
         "from": "quinto-andar",
         "to": "quinto-andar",
         expenseGroup: "Ordinarias",
-        searchable: "Despesas - Correio",
+        searchable: "Despesas - Correio, Porte - manuseio, Doc",
         url: "despesas-correio"
     }, {
         id: 17592194523929,
