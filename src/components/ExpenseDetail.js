@@ -188,7 +188,7 @@ export default function ExpenseDetail(props) {
 
 
                                 <Typography variant="h5" color="inherit">
-                                    Não achei a despesa na lista
+                                    Despesa
                                 </Typography>
                             </ToolBar>
                         </AppBar>
@@ -196,17 +196,15 @@ export default function ExpenseDetail(props) {
                     <Grid item md={6} sm={12} className={classes.grid}>
 
 
-                        <Typography variant="body1" className={classes.body1, classes.grayHigh}>Confira se a despesa não é de responsabilidade de inquilino e por isso não tem direito a reembolso:</Typography>
+                    <Typography variant="h5" className={classes.title}>{props.location.data} </Typography>
+
+                    
+                        <Typography variant="body1" className={classes.body1, classes.grayHigh}>Confira se essa despesa não é de responsabilidade de inquilino e por isso pode ser reembolsada:</Typography>
 
                         <Box mt="1rem" />
 
-
-
                         <Ordinarias></Ordinarias>
                         <br />
-
-
-
 
                     </Grid>
                 </Grid>

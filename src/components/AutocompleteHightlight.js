@@ -66,7 +66,7 @@ export default function AutocompleteHighlight() {
 
         return (
           <>
-          <Box button component={Link} to={option.url} className={option.url == "/nao-achei" ? classes.linkPrimary : classes.link}>
+          <Box button component={Link} to={{ pathname: option.url, data: inputValue}} className={option.url == "/nao-achei" ? classes.linkPrimary : classes.link}>
             
             {parts.map((part, index) => (
               
@@ -91,6 +91,7 @@ export default function AutocompleteHighlight() {
       filterOptions={(options, params) => {
         
         params.inputValue = params.inputValue.replace(/\./g,'')
+        
         const filtered = filter(options, params);
         console.dir(params.inputValue)
 

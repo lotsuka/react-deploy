@@ -5,6 +5,7 @@ import Autocomplete from './Autocomplete'
 import AutocompleteHighlight from './AutocompleteHightlight'
 import Grid from '@material-ui/core/Grid'
 import { Typography, makeStyles, Box } from '@material-ui/core';
+import { Link } from 'react-router-dom'
 
 
 const Home = () => {
@@ -75,6 +76,10 @@ const Home = () => {
 
                         <AutocompleteHighlight></AutocompleteHighlight>
                     </Box>
+
+                    <Typography variant="caption" className={classes.caption}>Mais comuns: <Link to="/fundoreserva">Fundo de reserva</Link>, <Link to="/obras">Fundo de Obras</Link></Typography>
+                    
+
                 </Grid>
             </Grid>
         </div>

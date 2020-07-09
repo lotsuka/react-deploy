@@ -357,10 +357,6 @@ export const expensesAll = [
         searchable: "Sistema Monitoramento/Segurança, sistema de monitoramento, sistema de segurança, conserto, concerto",
         url: "sistema-monitoramento",
     },
-
-
-
-
     {
         name: 'Bonificação natalina',
         description: `Despesa eventual normalmente acordada em assembleia e cobrada pela administradora do seu
