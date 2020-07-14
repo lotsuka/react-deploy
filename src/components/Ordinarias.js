@@ -14,6 +14,9 @@ import Button from '@material-ui/core/Button'
 import { expenses } from '../ExpensesData'
 import { Typography } from '@material-ui/core';
 
+import Alert from '@quintoandar/cozy-core/Alert';
+import CancelIcon from '@material-ui/icons/Cancel';
+
 import Box from '@material-ui/core/Box';
 import MoneyOffIcon from '@material-ui/icons/MoneyOff';
 import ToolBar from '@material-ui/core/ToolBar'
@@ -125,6 +128,12 @@ export default function Ordinarias(props) {
                 </ToolBar>
             </Paper>
             
+            <Alert color="error" icon={CancelIcon} title={{
+                            id: 'home.id',
+                            defaultMessage: 'Error Alert'
+                        }}>
+                            <span>This is an error Alert component</span>
+                        </Alert>
             
             <Typography variant="body1" className={classes.body1}>Chamada de ordinárias, essas depesas são relacionadas a gastos rotineiros para a manutenção do condomínio. Elas podem ser: </Typography>
             <Link className={classes.link} to="https://help.quintoandar.com.br/hc/pt-br/articles/115000619791-Consumos">Consumos do imóvel, como água</Link>

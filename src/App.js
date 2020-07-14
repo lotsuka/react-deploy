@@ -20,18 +20,31 @@ import { createMuiTheme, makeStyles, ThemeProvider } from '@material-ui/core/sty
 import Ordinarias from './components/Ordinarias';
 
 
+
+import CozyProvider from '@quintoandar/cozy-utils/providers/CozyProvider';
+import theme from '@quintoandar/cozy-core/styles/Theme';
+
+import {injectIntl, IntlProvider, FormattedRelative, useIntl} from 'react-intl';
+
+
 function App() {
   return (
     <>
-      <Switch>
-        <Route exact path="/" component={Home} />
-        <Route exact path="/acordos" component={Acordos} />
-        <Route exact path="/fundos" component={Fundos} />
-        <Route exact path="/reformas" component={Reformas} />
-        <Route exact path="/outras" component={Outras} />
-        <Route exact path="/:ExpenseId" render={(props) => <ExpenseDetail {...props} />} />
-        
-      </Switch>
+      <IntlProvider locale={navigator.language} >
+        <CozyProvider theme={theme}>
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route exact path="/acordos" component={Acordos} />
+            <Route exact path="/fundos" component={Fundos} />
+            <Route exact path="/reformas" component={Reformas} />
+            <Route exact path="/outras" component={Outras} />
+            <Route exact path="/:ExpenseId" render={(props) => <ExpenseDetail {...props} />} />
+
+
+          </Switch>
+        </CozyProvider>
+      </IntlProvider>
+
     </>
   );
 }

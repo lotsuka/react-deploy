@@ -9,9 +9,12 @@ import match from "autosuggest-highlight/match";
 import { expenses } from '../ExpensesData'
 import { expensesAll } from '../AllExpensesData'
 import { makeStyles, withTheme } from '@material-ui/core/styles';
-import { Link } from 'react-router-dom'
+import { Link as RouterLink } from 'react-router-dom'
 import Box from '@material-ui/core/Box';
 import { Typography } from '@material-ui/core';
+
+
+import Link from '@quintoandar/cozy-core/Link';
 
 const filter = createFilterOptions();
 
@@ -30,7 +33,7 @@ const useStyles = makeStyles((theme) => ({
   linkPrimary: {
     textDecoration: 'none',
     padding: '16px 0',
-    fontWeight:'700',
+    fontWeight: '700',
     color: '#5063F0',
     width: '100%',
     display: 'block'
@@ -49,63 +52,83 @@ export default function AutocompleteHighlight() {
 
   const classes = useStyles();
 
+  const [val, setVal] = useState({})
+
 
   return (
-    <Autocomplete
-      id="highlights-demo"
-      style={{ width: '100%' }}
-      options={expenseInfo}
-      getOptionLabel={option => option.searchable}
-      renderInput={params => (
-        <TextField autoFocus {...params} className={classes.textField} variant="outlined" margin="normal" />
-      )}
-      renderOption={(option, { inputValue }) => {
+    <>
+      <Autocomplete
+        id="highlights-demo"
+        style={{ width: '100%' }}
+        options={expenseInfo}
+        getOptionLabel={option => option.searchable}
+        renderInput={params => (
+          <TextField autoFocus {...params} className={classes.textField} variant="outlined" margin="normal" />
+        )}
+        renderOption={(option, { inputValue }) => {
 
-        const matches = match(option.name, inputValue);
-        const parts = parse(option.name, matches);
+          const matches = match(option.name, inputValue);
+          const parts = parse(option.name, matches);
 
-        return (
-          <>
-          <Box button component={Link} to={{ pathname: option.url, data: inputValue}} className={option.url == "/nao-achei" ? classes.linkPrimary : classes.link}>
-            
-            {parts.map((part, index) => (
-              
+          return (
+            <>
+              <Box button component={RouterLink} to={{ pathname: option.url, data: inputValue }} className={option.url == "/nao-achei" ? classes.linkPrimary : classes.link}>
 
-              <span
-                key={index}
-                style={{ fontWeight: part.highlight ? 700 : 400 }}
-              >
-                {part.text}
-              </span>
+                {parts.map((part, index) => (
 
-              
 
-            ))}
+                  <span
+                    key={index}
+                    style={{ fontWeight: part.highlight ? 700 : 400 }}
+                  >
+                    {part.text}
+                  </span>
 
-            <Typography variant="caption" className={classes.caption}>{option.searchable}</Typography>
 
-          </Box>
-          </>
-        );
-      }}
-      filterOptions={(options, params) => {
-        
-        params.inputValue = params.inputValue.replace(/\./g,'')
-        
-        const filtered = filter(options, params);
-        console.dir(params.inputValue)
 
-        // Suggest the creation of a new value
-        if (params.inputValue !== "" && filtered.length >= 0) {
-          filtered.push({
-            inputValue: params.inputValue,
-            name: `Pedir reembolso da despesa digitada`,
-            url: "/nao-achei"
-          });
-        }
+                ))}
 
-        return filtered;
-      }}
-    />
+                
+
+              </Box>
+            </>
+          );
+        }}
+        filterOptions={(options, params) => {
+
+          params.inputValue = params.inputValue.replace(/\./g, '')
+
+          const filtered = filter(options, params);
+          console.dir(params.inputValue)
+
+          // Suggest the creation of a new value
+          if (params.inputValue !== "" && filtered.length >= 0) {
+            filtered.push({
+              inputValue: params.inputValue,
+              name: `Pedir reembolso da despesa digitada`,
+              url: "/nao-achei"
+            });
+          }
+
+          return filtered;
+        }}
+      />
+
+
+      <Typography variant="caption" className={classes.caption}>Mais comuns: </Typography>
+
+      <Link component={RouterLink} message={('message', {
+        id: '11',
+        defaultMessage: 'Fundo - Reserva'
+      })} to={'/fundoreserva'} target={('target', ['_blank', '_parent', '_self', '_top'], '_self')}
+      />,
+
+      <Link component={RouterLink} message={('message', {
+        id: '11',
+        defaultMessage: 'Fundo - Obras'
+      })} to={'/obras'} target={('target', ['_blank', '_parent', '_self', '_top'], '_self')}
+      />
+
+    </>
   );
 }

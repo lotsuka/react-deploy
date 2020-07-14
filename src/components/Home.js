@@ -1,11 +1,23 @@
-import React from 'react';
-import NavBar from './NavBar'
+import React, { useState } from 'react';
+import AppBar from '@quintoandar/cozy-core/AppBar'
+import IconButton from '@quintoandar/cozy-core/IconButton'
+import ArrowBack from '@material-ui/icons/ArrowBack'
+
 import FolderList from './List'
 import Autocomplete from './Autocomplete'
 import AutocompleteHighlight from './AutocompleteHightlight'
-import Grid from '@material-ui/core/Grid'
-import { Typography, makeStyles, Box } from '@material-ui/core';
-import { Link } from 'react-router-dom'
+import Grid from '@material-ui/core/Grid';
+import CancelIcon from '@material-ui/icons/Cancel';
+
+
+
+import Button from '@quintoandar/cozy-core/Button';
+import Typography from '@quintoandar/cozy-core/Typography';
+import Alert from '@quintoandar/cozy-core/Alert';
+import Link from '@quintoandar/cozy-core/Link';
+
+import { makeStyles, Box } from '@material-ui/core';
+import { Link as RouterLink } from 'react-router-dom'
 
 
 const Home = () => {
@@ -55,34 +67,40 @@ const Home = () => {
         boxBackground: {
             background: '#FAFAFA'
         }
-    
+
     }));
 
     const classes = useStyles();
 
     return (
-        
+
         <div className="App">
             <Grid container justify="center" spacing={4}>
                 <Grid item xs={12}>
-                    <NavBar></NavBar>
+                    <AppBar>
+                        <IconButton >
+                            <ArrowBack color="highEmphasis"/>
+                        </IconButton>
+                        Selecione a despesa
+                    </AppBar>
                 </Grid>
                 <Grid item md={6} sm={12} style={style}>
                     <Box className={classes.boxBackground}>
-                        <Typography variant="h6" className={classes.title}>Digite a despesa para conferir se você pode pedir reembolso</Typography>
+                        <Typography variant="subheading" color="error" className={classes.title}>Digite a despesa para conferir se você pode pedir reembolso</Typography>
                         <Box mt="2rem" />
                         <Typography variant="body2" className={classes.subheadingMedium}>Nome da despesa</Typography>
                         <Typography variant="caption">Qual nome mais se aproxima do que está escrito no boleto?</Typography>
 
                         <AutocompleteHighlight></AutocompleteHighlight>
+
+
                     </Box>
 
-                    <Typography variant="caption" className={classes.caption}>Mais comuns: <Link to="/fundoreserva">Fundo de reserva</Link>, <Link to="/obras">Fundo de Obras</Link></Typography>
-                    
+
 
                 </Grid>
 
-                
+
             </Grid>
         </div>
 
