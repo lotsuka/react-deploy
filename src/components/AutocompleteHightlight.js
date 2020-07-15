@@ -40,8 +40,12 @@ const useStyles = makeStyles((theme) => ({
   },
   textField: {
     background: 'white'
-  }, caption: {
-    display: 'block'
+  }, 
+  caption: {
+    display: 'inline-block'
+  },
+  linkAutocomplete: {
+    margin: '0 0px 0 4px'
   }
 }));
 
@@ -117,13 +121,13 @@ export default function AutocompleteHighlight() {
 
       <Typography variant="caption" className={classes.caption}>Mais comuns: </Typography>
 
-      <Link component={RouterLink} message={('message', {
+      <Link className={classes.linkAutocomplete} component={RouterLink} message={('message', {
         id: '11',
         defaultMessage: 'Fundo - Reserva'
       })} to={'/fundoreserva'} target={('target', ['_blank', '_parent', '_self', '_top'], '_self')}
       />,
 
-      <Link component={RouterLink} message={('message', {
+      <Link className={classes.linkAutocomplete} component={RouterLink} message={('message', {
         id: '11',
         defaultMessage: 'Fundo - Obras'
       })} to={'/obras'} target={('target', ['_blank', '_parent', '_self', '_top'], '_self')}

@@ -143,14 +143,6 @@ export const expensesAll = [
         url: "benfeitorias"
     },
     {
-        name: 'Fundo - Estacionamento - Manutenção',
-        description: `Fundo - Estacionamento - Manutenção é um valor arrecadado para o fundo destinado à
-  manutenção e conservação das instalações do estacionamento/ garagem.`,
-        expenseGroup: "Fundos",
-        searchable: "Fundos, estacionamento, manutenção do estacionamento, manut.",
-        url: "estacionamentomanutencao"
-    },
-    {
         name: 'Fundo - Inadimplência',
         description: `Fundo - Inadimplência  é um valor arrecadado para o fundo destinado a cobrir eventual
   inadimplência das unidades.`,
@@ -309,7 +301,7 @@ export const expensesAll = [
         name: 'Reforma - Elevador',
         description: 'Reforma - Elevador é um valor destinado ao pagamento de serviços de reparo/troca do elevador',
         expenseGroup: "Reformas",
-        searchable: "Reforma - Elevador, benfeitoria dos elevadores, reparo de elevadores, conserto do elevador, concerto, peças elevador",
+        searchable: "Reforma - Elevador, benfeitoria dos elevadores, reparo de elevadores, conserto do elevador, concerto, elevador",
         url: "reforma-elevador",
     },
     {

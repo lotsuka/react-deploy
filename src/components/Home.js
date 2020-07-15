@@ -29,6 +29,7 @@ const Home = () => {
         root: {
             width: '100%',
             backgroundColor: theme.palette.background.paper,
+            color: '#424242'
         },
         appBarStyle: {
             background: 'white',
@@ -77,29 +78,20 @@ const Home = () => {
         <div className="App">
             <Grid container justify="center" spacing={4}>
                 <Grid item xs={12}>
+
                     <AppBar>
                         <IconButton >
-                            <ArrowBack color="highEmphasis"/>
+                            <ArrowBack color="highEmphasis" className={classes.grayHigh} />
                         </IconButton>
-                        Selecione a despesa
+                        Digite a despesa
                     </AppBar>
                 </Grid>
-                <Grid item md={6} sm={12} style={style}>
-                    <Box className={classes.boxBackground}>
-                        <Typography variant="subheading" color="error" className={classes.title}>Digite a despesa para conferir se você pode pedir reembolso</Typography>
-                        <Box mt="2rem" />
-                        <Typography variant="body2" className={classes.subheadingMedium}>Nome da despesa</Typography>
-                        <Typography variant="caption">Qual nome mais se aproxima do que está escrito no boleto?</Typography>
+                <Grid item md={6} xs={12} style={style}>
+                    <Typography variant="body2" className={classes.subheadingMedium}>Nome da despesa</Typography>
+                    <Typography variant="caption">Qual nome mais se aproxima do que está escrito no boleto?</Typography>
 
-                        <AutocompleteHighlight></AutocompleteHighlight>
-
-
-                    </Box>
-
-
-
+                    <AutocompleteHighlight></AutocompleteHighlight>
                 </Grid>
-
 
             </Grid>
         </div>
