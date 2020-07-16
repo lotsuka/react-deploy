@@ -113,8 +113,10 @@ export default function Ordinarias(props) {
     return (
         <>
 
+
+            <Box mt="4rem" />
             <Typography variant="h4" className={classes.title}> Despesas de pagamento de inquilinos</Typography>
-            
+
             <Box mt="1rem" />
 
             <Paper variant="outlined" className={classes.alertAttention}>
@@ -127,14 +129,8 @@ export default function Ordinarias(props) {
                     <Typography variant="body1">Você não tem direito a pedir reembolso das despesas de inquilinos</Typography>
                 </ToolBar>
             </Paper>
-            
-            <Alert color="error" icon={CancelIcon} title={{
-                            id: 'home.id',
-                            defaultMessage: 'Error Alert'
-                        }}>
-                            <span>This is an error Alert component</span>
-                        </Alert>
-            
+
+
             <Typography variant="body1" className={classes.body1}>Chamada de ordinárias, essas depesas são relacionadas a gastos rotineiros para a manutenção do condomínio. Elas podem ser: </Typography>
             <Link className={classes.link} to="https://help.quintoandar.com.br/hc/pt-br/articles/115000619791-Consumos">Consumos do imóvel, como água</Link>
             <Link className={classes.link} to="https://help.quintoandar.com.br/hc/pt-br/articles/115000629032-Cotas-condominiais">Cotas condominiais</Link>
@@ -144,9 +140,7 @@ export default function Ordinarias(props) {
             <Link className={classes.link} to="">Impostos</Link>
             <Link className={classes.link} to="https://help.quintoandar.com.br/hc/pt-br/articles/115000629432-Uso-dos-servi%C3%A7os-do-condom%C3%ADnio">Uso dos serviços do condomínio</Link>
 
-            <Typography variant="h6">Não é uma despesa de inquilino?</Typography>
-            
-            <Button variant="contained" fullWidth className={classes.buttonPrimary} size="large" color="primary">Pedir reembolso da despesa</Button>
+
             <Button fullWidth variant="outlined" className={classes.buttonSecondary} size="large" color="primary" className={classes.buttonSecondary} onClick={() => history.push("/")}>Voltar à lista de reembolsos</Button>
 
         </>

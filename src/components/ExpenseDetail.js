@@ -14,6 +14,17 @@ import Input from '@quintoandar/cozy-core/Input';
 import ArrowBack from '@material-ui/icons/ArrowBack'
 
 import CheckIcon from '@material-ui/icons/Check';
+import ChevronRight from '@material-ui/icons/ChevronRight';
+
+
+
+import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemText from '@material-ui/core/ListItemText';
+import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
+
+import Link from '@material-ui/core/Link'
+import Divider from '@quintoandar/cozy-core/Divider'
 
 
 
@@ -132,7 +143,7 @@ export default function ExpenseDetail(props) {
                     <Grid item xs={12}>
                         <AppBar>
                             <IconButton >
-                                <ArrowBack color="highEmphasis" className={classes.grayHigh}  onClick={() => history.push("/")} />
+                                <ArrowBack color="highEmphasis" className={classes.grayHigh} onClick={() => history.push("/")} />
                             </IconButton>
                             Sobre a despesa
                         </AppBar>
@@ -141,43 +152,53 @@ export default function ExpenseDetail(props) {
 
                         <Typography variant="h5" className={classes.title}>{result[0].name}</Typography>
 
-                        <Box m={2}></Box>
+                        <Box m={2} />
 
                         <Typography variant="body" className={classes.body12, classes.grayMedium}>
                             {result[0].description}
                         </Typography>
 
-                        {(result[0].expenseGroup == "Ordinarias") ? (
-                            // Despesa de inquilino
 
-                            <Alert color="attention" icon={MoneyOffIcon} title={{
-                                id: 'alert.id',
-                                defaultMessage: 'Essa despesa geralmente não é reembolsável, por ser de responsabilidade de inquilinos'
-                            }}>
-                                Se for referente a um período de mais de 2 meses anterior à sua locação, peça o reembolso que vamos analisar.
+
+
+
+                        {(result[0].expenseGroup == "Ordinarias") ? (
+
+                            // Despesa de inquilino
+                            <>
+                                <Box m={4} />
+                                <Alert color="attention" icon={MoneyOffIcon} title={{
+                                    id: 'alert.id',
+                                    defaultMessage: 'Essa despesa geralmente não é reembolsável, por ser de responsabilidade de inquilinos'
+                                }}>
+                                    Se for referente a um período de mais de 2 meses anterior à sua locação, peça o reembolso que vamos analisar.
                             </Alert>
 
-
+                            </>
 
                         ) : (
-                                <Alert className={classes.alert} color="success" icon={CheckIcon} title={{
-                                    id: 'alert.id',
-                                    defaultMessage: 'Você pode pedir reembolso dessa despesa'
-                                }}>
-                                </Alert>
+                                <>
+                                    <Box m={4} />
+                                    <Alert className={classes.alert} color="success" icon={CheckIcon} title={{
+                                        id: 'alert.id',
+                                        defaultMessage: 'Você pode pedir reembolso dessa despesa'
+                                    }}>
+                                    </Alert>
+
+                                </>
                             )}
 
-                        
+
 
                         <br />
 
                         {(result[0].expenseGroup != "Ordinarias") ? (
-                            <Button fullWidth href="https://www.figma.com/proto/vikIUDW9zdt0o0ffR3civo/Estudos-Self-Condo-Reembolso-e-Meu-Aluguel?node-id=1848%3A47659&viewport=-3728%2C-2202%2C0.3785596787929535&scaling=scale-down" className={classes.button}>Pedir reembolso dessa despesa</Button>
+                            <Button fullWidth onClick={() => { window.open("https://www.figma.com/proto/vikIUDW9zdt0o0ffR3civo/Estudos-Self-Condo-Reembolso-e-Meu-Aluguel?node-id=1848%3A47659&viewport=-1699%2C-1207%2C0.20808285474777222&scaling=scale-down") }} className={classes.button}>Pedir reembolso dessa despesa</Button>
                         ) : (
-                            <>
-                                <Button fullWidth className={classes.button} onClick={() => history.push("/")}>Voltar às despesas para reembolso</Button>
-                                <Button fullWidth variant="secondary" onClick={ () => { window.open("https://www.figma.com/proto/vikIUDW9zdt0o0ffR3civo/Estudos-Self-Condo-Reembolso-e-Meu-Aluguel?node-id=1848%3A47659&viewport=-3728%2C-2202%2C0.3785596787929535&scaling=scale-down")}} className={classes.button}>Pedir reembolso dessa despesa</Button>
-                            </>
+                                <>
+                                    <Button fullWidth className={classes.button} onClick={() => history.push("/")}>Voltar às despesas para reembolso</Button>
+                                    <Button fullWidth variant="secondary" onClick={() => { window.open("https://www.figma.com/proto/vikIUDW9zdt0o0ffR3civo/Estudos-Self-Condo-Reembolso-e-Meu-Aluguel?node-id=1848%3A47659&viewport=-1699%2C-1207%2C0.20808285474777222&scaling=scale-down") }} className={classes.button}>Pedir reembolso dessa despesa</Button>
+                                </>
                             )
                         }
                     </Grid>
@@ -191,7 +212,7 @@ export default function ExpenseDetail(props) {
                 <Grid container justify="center">
                     <Grid item xs={12}>
                         <AppBar>
-                            <IconButton >
+                            <IconButton onClick={() => history.push("/")}>
                                 <ArrowBack color="highEmphasis" className={classes.grayHigh} />
                             </IconButton>
                             Despesa digitada
@@ -199,17 +220,9 @@ export default function ExpenseDetail(props) {
                     </Grid>
                     <Grid item md={6} xs={12} sm={6} className={classes.grid}>
 
+
+
                         
-
-                        <Alert color="attention" icon={MoneyOffIcon} title={{
-                            id: 'alert.id',
-                            defaultMessage: 'Não achamos essa despesa na lista'
-                        }}>
-                            Se você acha que tem direito ao reembolso, digite a despesa exatamente como no boleto que vamos analisar seu pedido
-                        </Alert>
-
-
-                        <Box mt="1rem" />
 
                         <Form onSubmit={() => ('submitted! #SQN')}>
                             <Field label={('labelMessage', {
@@ -228,11 +241,24 @@ export default function ExpenseDetail(props) {
 
                             </Field>
                         </Form>
-                        
 
-                        <Button fullWidth onClick={ () => { window.open("https://www.figma.com/proto/vikIUDW9zdt0o0ffR3civo/Estudos-Self-Condo-Reembolso-e-Meu-Aluguel?node-id=1848%3A47659&viewport=-3728%2C-2202%2C0.3785596787929535&scaling=scale-down")}} className={classes.button}>Pedir reembolso da despesa digitada</Button>
-                        <Button variant="secondary" fullWidth className={classes.button} onClick={() => history.push("/")}>Voltar às despesas para reembolso</Button>
+                        <Alert color="attention" icon={MoneyOffIcon} title={{
+                            id: 'alert.id',
+                            defaultMessage: 'Não achamos essa despesa na lista'
+                        }} linkProps={{
+                            href: "#/ordinarias",
+                            message: {
+                              id: 'my.messageId2',
+                              defaultMessage: 'Ver despesas não reembolsáveis'
+                            }}}>
+                                Confira se é uma despesa não reembolsável. Senão, digite-a como no boleto que vamos analisar seu pedido
                             
+                        </Alert>
+
+
+                        <Button fullWidth onClick={() => { window.open("https://www.figma.com/proto/vikIUDW9zdt0o0ffR3civo/Estudos-Self-Condo-Reembolso-e-Meu-Aluguel?node-id=1848%3A47659&viewport=-1699%2C-1207%2C0.20808285474777222&scaling=scale-down") }} className={classes.button}>Pedir reembolso da despesa digitada</Button>
+                        <Button variant="secondary" fullWidth className={classes.button} onClick={() => history.push("/")}>Voltar às despesas para reembolso</Button>
+
                     </Grid>
                 </Grid>
             </>

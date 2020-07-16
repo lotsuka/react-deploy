@@ -14,6 +14,7 @@ import Acordos from './components/Acordos'
 import Fundos from './components/Fundos'
 import Reformas from './components/Reformas'
 import Outras from './components/Outras'
+import Inquilinos from './components/Inquilinos'
 import AutocompleteNoOptions from './components/AutcompleteNoOptions'
 
 import { createMuiTheme, makeStyles, ThemeProvider } from '@material-ui/core/styles';
@@ -38,6 +39,7 @@ function App() {
             <Route exact path="/fundos" component={Fundos} />
             <Route exact path="/reformas" component={Reformas} />
             <Route exact path="/outras" component={Outras} />
+            <Route exact path="/ordinarias" component={Inquilinos} />
             <Route exact path="/:ExpenseId" render={(props) => <ExpenseDetail {...props} />} />
 
 
