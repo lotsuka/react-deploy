@@ -193,11 +193,11 @@ export default function ExpenseDetail(props) {
                         <br />
 
                         {(result[0].expenseGroup != "Ordinarias") ? (
-                            <Button fullWidth onClick={() => { window.open("https://www.figma.com/proto/vikIUDW9zdt0o0ffR3civo/%5BEstudos%5D-Self-Condo%2C-Reembolso-e-Meu-Aluguel?node-id=701%3A1262&viewport=-3640%2C-2311%2C0.38533467054367065&scaling=scale-down") }} className={classes.button}>Pedir reembolso dessa despesa</Button>
+                            <Button fullWidth onClick={() => { window.open("https://www.figma.com/proto/vikIUDW9zdt0o0ffR3civo/Estudos-Self-Condo-Reembolso-e-Meu-Aluguel?node-id=2344%3A3316&viewport=3137%2C497%2C0.12901844084262848&scaling=scale-down") }} className={classes.button}>Pedir reembolso dessa despesa</Button>
                         ) : (
                                 <>
                                     <Button fullWidth className={classes.button} onClick={() => history.push("/")}>Voltar às despesas para reembolso</Button>
-                                    <Button fullWidth variant="secondary" onClick={() => { window.open("https://www.figma.com/proto/vikIUDW9zdt0o0ffR3civo/%5BEstudos%5D-Self-Condo%2C-Reembolso-e-Meu-Aluguel?node-id=701%3A1262&viewport=-3640%2C-2311%2C0.38533467054367065&scaling=scale-down") }} className={classes.button}>Pedir reembolso dessa despesa</Button>
+                                    <Button fullWidth variant="secondary" onClick={() => { window.open("https://www.figma.com/proto/vikIUDW9zdt0o0ffR3civo/Estudos-Self-Condo-Reembolso-e-Meu-Aluguel?node-id=2344%3A3316&viewport=3137%2C497%2C0.12901844084262848&scaling=scale-down") }} className={classes.button}>Pedir reembolso dessa despesa</Button>
                                 </>
                             )
                         }
@@ -256,7 +256,7 @@ export default function ExpenseDetail(props) {
                         </Alert>
 
 
-                        <Button fullWidth onClick={() => { window.open("https://www.figma.com/proto/vikIUDW9zdt0o0ffR3civo/%5BEstudos%5D-Self-Condo%2C-Reembolso-e-Meu-Aluguel?node-id=701%3A1262&viewport=-3640%2C-2311%2C0.38533467054367065&scaling=scale-down") }} className={classes.button}>Pedir reembolso da despesa digitada</Button>
+                        <Button fullWidth onClick={() => { window.open("https://www.figma.com/proto/vikIUDW9zdt0o0ffR3civo/Estudos-Self-Condo-Reembolso-e-Meu-Aluguel?node-id=2344%3A3316&viewport=3137%2C497%2C0.12901844084262848&scaling=scale-down") }} className={classes.button}>Pedir reembolso da despesa digitada</Button>
                         <Button variant="secondary" fullWidth className={classes.button} onClick={() => history.push("/")}>Voltar às despesas para reembolso</Button>
 
                     </Grid>
