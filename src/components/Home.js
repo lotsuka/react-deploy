@@ -88,7 +88,7 @@ const Home = () => {
                 </Grid>
                 <Grid item md={6} xs={12} style={style}>
                     <Typography variant="body2" className={classes.subheadingMedium}>Nome da despesa</Typography>
-                    <Typography variant="caption">Qual nome mais se aproxima do que está escrito no boleto?</Typography>
+                    <Typography variant="caption">Digite o nome que mais se aproxima do que está escrito no boleto</Typography>
 
                     <AutocompleteHighlight></AutocompleteHighlight>
                 </Grid>

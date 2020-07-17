@@ -15,6 +15,7 @@ import Fundos from './components/Fundos'
 import Reformas from './components/Reformas'
 import Outras from './components/Outras'
 import Inquilinos from './components/Inquilinos'
+import Explanation from './components/Explanation'
 import AutocompleteNoOptions from './components/AutcompleteNoOptions'
 
 import { createMuiTheme, makeStyles, ThemeProvider } from '@material-ui/core/styles';

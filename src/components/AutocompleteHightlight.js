@@ -106,13 +106,13 @@ export default function AutocompleteHighlight() {
           console.dir(params.inputValue)
 
           // Suggest the creation of a new value
-          if (params.inputValue !== "" && filtered.length >= 0) {
+          //if (params.inputValue !== "" && filtered.length >= 0) {
             filtered.push({
               inputValue: params.inputValue,
-              name: `Pedir reembolso da despesa digitada`,
+              name: `Não achei a despesa na lista`,
               url: "/nao-achei"
             });
-          }
+          //}
 
           return filtered;
         }}
